@@ -6,9 +6,16 @@ class Contact:
         number (str): The phone number of the contact.
     '''
     
-    pass # Delete this line when implementing the class
+    def __init__(self, name: str, number: str): # contact class
+        #initializing a Contact with a name and phone number
+        self.name = name
+        self.number = number
 
-class Node:
+    def __str__(self) -> str:
+        #returns the contact in the format '[NAME]: [NUMBER]'
+        return f"{self.name}: {self.number}"
+
+class Node: # node class
     '''
     Node class to represent a single entry in the hash table.
     Attributes:
@@ -16,8 +23,17 @@ class Node:
         value (Contact): The value (Contact object) associated with the key.
         next (Node): Pointer to the next node in case of a collision.
     '''
-   
-    pass # Delete this line when implementing the class
+
+    def __init__(self, key: str, value: 'Contact', next=None):
+        # initialize a Node for separate chaining.
+
+        # attributes:
+        self.key = key
+        self.value = value
+        self.next = next
+
+    def __repr__(self) -> str:
+        return f"Node({self.key!r})"
 
 class HashTable:
     '''
